@@ -1,0 +1,28 @@
+>>> docker-compose down
+
+>>> docker-compose up
+
+
+--- wait till db is completed until:
+     mysqld: ready for connections.
+
+then try to manually save settings.py
+~~ it seems you need to do a manual save of settings.py
+to trigger refresh of django code
+
+>>> docker-compose up -d
+
+
+
+remove container:
+>>> docker ps -a
+>>> docker rm -f ########
+
+
+enter service:
+  docker-compose exec "name of service" sh
+
+to create a new app:
+
+>>> docker-compose exec admin_api sh
+>>> py manage.py startapp users
