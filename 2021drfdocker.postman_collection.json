@@ -77,7 +77,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"email\": \"a4@a.com\",\r\n    \"password\": 1\r\n}"
+					"raw": "{\r\n    \"email\": \"admin@admin.com\",\r\n    \"password\": \"password\"\r\n}"
 				},
 				"url": {
 					"raw": "{{URLAPI}}/login/",
@@ -104,6 +104,42 @@
 					],
 					"path": [
 						"user",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/api/logout/",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{URLAPI}}/logout/",
+					"host": [
+						"{{URLAPI}}"
+					],
+					"path": [
+						"logout",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/api/permissions/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URLAPI}}/permissions/",
+					"host": [
+						"{{URLAPI}}"
+					],
+					"path": [
+						"permissions",
 						""
 					]
 				}

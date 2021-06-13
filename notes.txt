@@ -21,15 +21,11 @@ to trigger refresh of django code
 
 remove container:
 >>> docker ps -a
->>> docker rm -f ########
-
-
-enter service:
-  docker-compose exec "name of service" sh
+>>> docker rm -f <container id>
 
 to create a new app:
 
->>> docker-compose exec admin_api sh
+>>> docker exec -it <container id> sh
 >>> python manage.py migrate
 >>> python manage.py startapp users
 
@@ -40,3 +36,10 @@ raw passwords will not calculate properly.. it expects hashed passwords
 check docker container timezone:
 >>> docker ps -a
 >>> docker exec -it <container id> date
+
+
+prefill data with fixtures:
+>>> docker-compose exec admin_api sh
+>>> python manage.py loaddata fixtures/permissions.json
+>>> python manage.py loaddata fixtures/roles.json
+>>> python manage.py loaddata fixtures/users.json   #password = password
