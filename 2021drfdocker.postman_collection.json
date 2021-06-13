@@ -1,0 +1,114 @@
+{
+	"info": {
+		"_postman_id": "4161fe1e-59ad-4bee-b690-90d0aa1474f5",
+		"name": "2021drfdocker",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "/api/register/",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"first_name\": \"XX\",\r\n    \"last_name\": \"YY\",\r\n    \"email\": \"a1@a.com\",\r\n    \"password\": \"1\",\r\n    \"password_confirm\": \"1\"\r\n}"
+				},
+				"url": {
+					"raw": "{{URLAPI}}/register/",
+					"host": [
+						"{{URLAPI}}"
+					],
+					"path": [
+						"register",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/api/users/",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{URLAPI}}/users/",
+					"host": [
+						"{{URLAPI}}"
+					],
+					"path": [
+						"users",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/api/login/",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"a4@a.com\",\r\n    \"password\": 1\r\n}"
+				},
+				"url": {
+					"raw": "{{URLAPI}}/login/",
+					"host": [
+						"{{URLAPI}}"
+					],
+					"path": [
+						"login",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/api/user/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URLAPI}}/user/",
+					"host": [
+						"{{URLAPI}}"
+					],
+					"path": [
+						"user",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

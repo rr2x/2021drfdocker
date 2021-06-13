@@ -1,6 +1,13 @@
+https://pypi.org/search/
+https://hub.docker.com/
+
+
 >>> docker-compose down
 
 >>> docker-compose up
+--- it seems need to run twice after build..
+error after building because maybe disabled windows services,
+run again to initiate the container
 
 
 --- wait till db is completed until:
@@ -9,8 +16,6 @@
 then try to manually save settings.py
 ~~ it seems you need to do a manual save of settings.py
 to trigger refresh of django code
-
->>> docker-compose up -d
 
 
 
@@ -25,4 +30,13 @@ enter service:
 to create a new app:
 
 >>> docker-compose exec admin_api sh
->>> py manage.py startapp users
+>>> python manage.py migrate
+>>> python manage.py startapp users
+
+
+important: if you change the serializer into using hashed passwords,
+raw passwords will not calculate properly.. it expects hashed passwords
+
+check docker container timezone:
+>>> docker ps -a
+>>> docker exec -it <container id> date

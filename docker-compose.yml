@@ -1,0 +1,39 @@
+version: "3.8"
+services:
+  frontend:
+    image: antoniopapa1991/django-frontend
+    ports:
+      - 8080:80
+    depends_on:
+      - admin_api
+    environment:
+      TZ: "Asia/Singapore"
+
+  admin_api:
+    container_name: django_api
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/app
+    ports:
+      - 8000:8000
+    depends_on:
+      - admin_db
+    environment:
+      TZ: "Asia/Singapore"
+
+  admin_db:
+    container_name: django_admin_db
+    image: mysql:8.0.25
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      MYSQL_DATABASE: "django_admin"
+      MYSQL_PASSWORD: "thec0mm0np@$swrd"
+      MYSQL_ROOT_PASSWORD: "theRo0tpwsWrd"
+      TZ: "Asia/Singapore"
+    volumes:
+      - .dbdata:/var/lib/mysql
+    ports:
+      - "33066:3306"
