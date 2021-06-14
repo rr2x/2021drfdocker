@@ -6,6 +6,7 @@ urlpatterns = [
     path('register/', register),
     path('login/', login),
     path('logout/', logout),
+    path('users/', users),
     path('user/', AuthenticatedUser.as_view()),
     path('permissions/', PermissionAPIView.as_view()),
     path('roles/', RoleViewSet.as_view({
