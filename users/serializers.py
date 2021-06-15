@@ -42,6 +42,7 @@ class RoleRelatedField(serializers.RelatedField):
 
 
 class UserSerializer(serializers.ModelSerializer):
+    # we use RelatedField to change representation of data
     role = RoleRelatedField(many=False, queryset=Role.objects.all())
 
     class Meta:

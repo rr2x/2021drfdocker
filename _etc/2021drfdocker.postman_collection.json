@@ -424,6 +424,178 @@
 					"response": []
 				}
 			]
+		},
+		{
+			"name": "products",
+			"item": [
+				{
+					"name": "/api/products/",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URLAPI}}/products/",
+							"host": [
+								"{{URLAPI}}"
+							],
+							"path": [
+								"products",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/products/",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"title1\",\r\n    \"description\": \"desc1\",\r\n    \"image\": \"img1\",\r\n    \"price\": 0.00\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URLAPI}}/products/",
+							"host": [
+								"{{URLAPI}}"
+							],
+							"path": [
+								"products",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/products/:pk",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"title1\",\r\n    \"description\": \"desc1\",\r\n    \"image\": \"img1\",\r\n    \"price\": 777.00\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URLAPI}}/products/2",
+							"host": [
+								"{{URLAPI}}"
+							],
+							"path": [
+								"products",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/products/:pk",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URLAPI}}/products/2",
+							"host": [
+								"{{URLAPI}}"
+							],
+							"path": [
+								"products",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/upload/",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/0/Downloads/0102-016.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URLAPI}}/upload/",
+							"host": [
+								"{{URLAPI}}"
+							],
+							"path": [
+								"upload",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "orders",
+			"item": [
+				{
+					"name": "/api/orders",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URLAPI}}/orders",
+							"host": [
+								"{{URLAPI}}"
+							],
+							"path": [
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/export/",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URLAPI}}/export/",
+							"host": [
+								"{{URLAPI}}"
+							],
+							"path": [
+								"export",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	]
 }
