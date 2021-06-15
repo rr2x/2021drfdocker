@@ -8,6 +8,7 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from .models import Permission, Role, User
 from .authentication import JWTAuthentication, generate_access_token
+from .permissions import ViewPermissions
 
 
 @api_view(['POST'])
@@ -87,7 +88,11 @@ class PermissionAPIView(APIView):
 # as all-in-one crud operation class
 class RoleViewSet(viewsets.ViewSet):
     authentication_classes = [JWTAuthentication]
-    permission_classes = [IsAuthenticated]
+
+    # need to both return true to access
+    permission_classes = [IsAuthenticated & ViewPermissions]
+
+    permission_object = 'roles'
 
     def list(self, _):
         serializer = RoleSerializer(Role.objects.all(), many=True)
@@ -135,10 +140,11 @@ class UserGenericAPIView(
         mixins.DestroyModelMixin):
 
     authentication_classes = [JWTAuthentication]
-    permission_classes = [IsAuthenticated]
+    permission_classes = [IsAuthenticated & ViewPermissions]
     queryset = User.objects.all()  # crud operations are handled by the GenericAPIView
     serializer_class = UserSerializer
     pagination_class = CustomPagination
+    permission_object = 'users'
 
     def get(self, request, pk=None):
         if pk:

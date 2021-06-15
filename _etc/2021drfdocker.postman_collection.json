@@ -594,6 +594,24 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "/api/chart/",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URLAPI}}/chart/",
+							"host": [
+								"{{URLAPI}}"
+							],
+							"path": [
+								"chart",
+								""
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		}
